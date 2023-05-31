@@ -11,4 +11,10 @@ public class Vertex<V> {
     public V getData() {
         return data;
     }
+    public Map<Vertex<V>, Double> getAdjacentVertices(){
+        return adjacentVertices;
+    }
+    public void addAdjacentVertex(Vertex<V> destination, double weight) {
+        adjacentVertices.put(destination, weight);
+    }
 }
