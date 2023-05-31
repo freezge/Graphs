@@ -14,7 +14,7 @@ public class BreadthFirstSearch<V> implements Search<V>{
         while (!queue.isEmpty()) {
             Vertex<V> current = queue.poll();
             if (current.equals(destination)) {
-                return constructPath(parentMap, destination);
+                return createPath(parentMap, destination);
             }
             for (WeightedGraph.WeightedEdge<V> edge : graph.getEdges(current)) {
                 Vertex<V> neighbor = (Vertex<V>) edge.getDestination();
@@ -27,7 +27,13 @@ public class BreadthFirstSearch<V> implements Search<V>{
         return Collections.emptyList();
     }
 
-    private List<V> constructPath(Map<Vertex<V>,Vertex<V>> map, Vertex<V> destination) {
-        return null;
+    private List<V> createPath(Map<Vertex<V>,Vertex<V>> map, Vertex<V> destination) {
+        List<V> path = new LinkedList<>();
+        Vertex<V> current = destination;
+        while (current != null) {
+            path.add(0, current.getData());
+            current = map.get(current);
+        }
+        return path;
     }
 }
