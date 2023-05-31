@@ -2,27 +2,27 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        WeightedGraph<String> graph = new WeightedGraph<>();
-        Vertex<String> A = new Vertex<>("A");
-        Vertex<String> B = new Vertex<>("B");
-        Vertex<String> C = new Vertex<>("C");
-        Vertex<String> D = new Vertex<>("D");
-        Vertex<String> E = new Vertex<>("E");
-        graph.addVertex(A);
-        graph.addVertex(B);
-        graph.addVertex(C);
-        graph.addVertex(D);
-        graph.addVertex(E);
-        graph.addEdge(A, B, 35.0);
-        graph.addEdge(A, C, 17.0);
-        graph.addEdge(B, D, 11.0);
-        graph.addEdge(C, D, 61.0);
-        graph.addEdge(C, E, 19.0);
-        Search<String> b = new BreadthFirstSearch<>(graph);
-        List<String> path = b.path(A, D);
-        System.out.println(path);
-//        Search<String> d = new DijkstraSearch<>(graph);
-//        List<String> path = d.path(A, D);
-//        System.out.println(path);
+        WeightedGraph<String> graph = new WeightedGraph<>();//tests
+        Vertex<String> A = new Vertex<>("A");//tests
+        Vertex<String> B = new Vertex<>("B");//tests
+        Vertex<String> C = new Vertex<>("C");//tests
+        Vertex<String> D = new Vertex<>("D");//tests
+        Vertex<String> E = new Vertex<>("E");//tests
+        graph.addVertex(A);//tests
+        graph.addVertex(B);//tests
+        graph.addVertex(C);//tests
+        graph.addVertex(D);//tests
+        graph.addVertex(E);//tests
+        graph.addEdge(A, B, 35.0);//tests
+        graph.addEdge(A, C, 17.0);//tests
+        graph.addEdge(B, D, 11.0);//tests
+        graph.addEdge(C, D, 61.0);//tests
+        graph.addEdge(C, E, 19.0);//tests
+        Search<String> b = new BreadthFirstSearch<>(graph);//tests
+        List<String> path = b.path(A, D);//tests
+        System.out.println(path);//tests
+//        Search<String> d = new DijkstraSearch<>(graph);//tests
+//        List<String> path = d.path(A, D);//tests
+//        System.out.println(path);//tests
     }
 }
