@@ -34,10 +34,16 @@ public class WeightedGraph<V>{
         if (!checkVertex(source) && !checkVertex(destination)){
             return;
         }
-        List<WeightedEdge<V>> edgeList = map.get(source);
-        edgeList.add(new WeightedEdge<>(source, destination, weight));
+        List<WeightedEdge<V>> edges = map.get(source);
+        edges.add(new WeightedEdge<>(source, destination, weight));
     }
     public boolean checkVertex(Vertex<V> vertex){
         return map.containsKey(vertex);
+    }
+    public List<WeightedEdge<V>> getEdges(Vertex<V> vertex) {
+        if (!checkVertex(vertex)){
+            return null;
+        }
+        return map.get(vertex);
     }
 }
