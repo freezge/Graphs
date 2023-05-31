@@ -1,2 +1,4 @@
-public class Search {
+import java.util.List;
+public interface Search <V>{
+    List<V> Path(Vertex<V> source, Vertex<V> destination);
 }
