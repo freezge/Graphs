@@ -46,4 +46,7 @@ public class WeightedGraph<V>{
         }
         return map.get(vertex);
     }
+    public List<Vertex<V>> getVertices() {
+        return new ArrayList<>(map.keySet());
+    }
 }
