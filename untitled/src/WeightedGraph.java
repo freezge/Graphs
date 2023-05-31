@@ -30,4 +30,14 @@ public class WeightedGraph<V>{
     public void addVertex(Vertex<V> vertex) {
         map.put(vertex, new ArrayList<>());
     }
+    public void addEdge(Vertex<V> source, Vertex<V> destination, double weight) {
+        if (!checkVertex(source) && !checkVertex(destination)){
+            return;
+        }
+        List<WeightedEdge<V>> edgeList = map.get(source);
+        edgeList.add(new WeightedEdge<>(source, destination, weight));
+    }
+    public boolean checkVertex(Vertex<V> vertex){
+        return map.containsKey(vertex);
+    }
 }
